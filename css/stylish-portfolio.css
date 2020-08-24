@@ -19,6 +19,7 @@ body {
 }
 
 .content-section {
+
   padding-top: 7.5rem;
   padding-bottom: 7.5rem;
 }
@@ -206,9 +207,8 @@ h6 {
   height: 7rem;
   width: 7rem;
   display: block;
-  line-height: 7.5rem;
-  font-size: 2.25rem;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+  
 }
 
 .callout {
@@ -363,9 +363,10 @@ a:hover, a:focus, a:active {
 }
 
 .bg-primary {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/blue-masthead.jpg");
+  background-color: white;
+  background:url("../img/blu-masthead.jpg");
   background-position: center center;
-  background-repeat: no-repeat; !important;
+  background-repeat: repeat; !important;
 }
 
 .text-primary {
