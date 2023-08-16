@@ -68,6 +68,11 @@ h6 {
   pointer-events: none;
 }
 
+a.scroll-to-top:hover {
+  color:white;
+  background: rgba(4,44,76, 1);
+ }
+
 .scroll-to-top {
   position: fixed;
   right: 15px;
@@ -77,16 +82,18 @@ h6 {
   height: 50px;
   text-align: center;
   color: white;
-  background: rgba(52, 58, 64, 0.5);
+  background: rgba(4,44,76, 0.5);
   line-height: 45px;
+  border: 1px solid rgba(255, 255, 255,0);
 }
 
 .scroll-to-top:focus, .scroll-to-top:hover {
-  color: white;
+  border-color:white;
+  transition: 0.3s ease;
 }
 
 .scroll-to-top:hover {
-  background: #343a40;
+  background: rgba(4,44,76,0.5);
 }
 
 .scroll-to-top i {
@@ -179,7 +186,7 @@ h6 {
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-  color: grey;
+  color: rgba(4,44,76,0.5);
   background: none;
 }
 
@@ -197,9 +204,10 @@ h6 {
   height: 50px;
   text-align: center;
   color: #fff;
-  background: rgba(52, 58, 64, 0.5);
+  background: rgba(4,44,76, 0.5);
   line-height: 50px;
   z-index: 999;
+  border: 1px solid rgba(255, 255, 255,0);
 }
 
 .menu-toggle:focus, .menu-toggle:hover {
@@ -207,7 +215,9 @@ h6 {
 }
 
 .menu-toggle:hover {
-  background: #343a40;
+  border-color:white;
+  transition: 0.3s ease;
+  background: rgba(4,44,76, 1);
 }
 
 .service-icon {
@@ -301,7 +311,6 @@ h6 {
   transition: 0.5s ease;
   scale: 1.1;
   filter:blur(3px);
-  object-fit: cover;
 }
 
 .hover-wrapper:hover .hover-overlay {
