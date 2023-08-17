@@ -350,6 +350,10 @@ a.scroll-to-top:hover {
   align-items: center;
 }
 
+.hover-content h3{
+  font-size: 3vmin;
+}
+
 .hover-content p{
   height:0;
   overflow:hidden;
@@ -358,10 +362,11 @@ a.scroll-to-top:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 2vmin;
 }
 
 .hover-wrapper:hover .hover-content p{
-  height:100px;
+  height:13vmin;
   transition: 0.3s ease;
 }
 
