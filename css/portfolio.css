@@ -520,6 +520,16 @@ a:hover, a:focus, a:active {
 
 @media screen and (max-width: 830px) {
 
+  .wrapper{
+    margin: 0;
+    margin-top:10px;
+  }
+
+  .rightwrapper{
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
   .hover-wrapper:hover .hover-content p{
     height:0;
   }
