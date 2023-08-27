@@ -11,10 +11,66 @@ html {
   height: 100%;
 }
 
-:root{--blueColor: rgb(4,44,76)}
+@font-face {
+  font-family: 'titleFont';
+  src: url('../font/NinetiesDisplay.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  }
+
+:root{--blueColor: rgba(0,0,0,0);
+      --bgColor: rgb(3, 3, 94);}
+
+::-webkit-scrollbar{
+  background: rgba(0, 0, 0, 0);
+}
+
+::-webkit-scrollbar-thumb{
+  backdrop-filter: blur(20px);
+  background-color: rgba(179, 179, 179, 0.1);
+  border: 1px solid rgba(179, 179, 179, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-corner{
+  background: rgba(0, 0, 0, 0);
+}
+
+.wrapper{
+  align-items: center;
+  height:calc(100% - 40px);
+  overflow: hidden;
+  display:flex;
+  flex-direction: row;
+  border: 2px solid rgba(255, 255, 255, 0);
+  margin: 25px;
+  box-sizing: border-box;
+  position: fixed;
+  flex-wrap: wrap;
+}
+
+.rightwrapper{
+  height:90%;
+  width: calc(75% - 3vmin);
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  transition: 0.3s ease;
+  margin-right:3vmin;
+  padding-left:11%;
+  padding-right:11%;
+  box-sizing: border-box;
+
+}
 
 body {
-  background-color:var(--blueColor);
+  overflow: hidden;
+  background-image: url("bground3.jpg");
+  background-color: var(--bgColor);
+  background-blend-mode:darken;
+  background-size: cover;
+  transition: background-color 1s ease;
   font-family: 'Source Sans Pro';
   color: white;
 }
@@ -24,9 +80,17 @@ body {
 }
 
 .content-section {
+  margin-bottom: 35rem;
+}
 
-  padding-top: 7.5rem;
-  padding-bottom: 7.5rem;
+.content-section-about{
+  padding-top:14rem;
+  margin-bottom: 35rem;
+}
+
+.content-section-skills{
+  padding-top:7rem;
+  margin-bottom: 35rem;
 }
 
 .content-section-heading h2 {
@@ -40,7 +104,10 @@ body {
   color: white;
 }
 
-h1,
+h1 {
+  font-weight: 300;
+}
+
 h2,
 h3,
 h4,
@@ -58,59 +125,29 @@ h6 {
   height: 30rem;
 }
 
-@media (max-width: 992px) {
-  .map {
-    height: 75%;
-  }
-}
-
 .map iframe {
   pointer-events: none;
 }
 
-a.scroll-to-top:hover {
-  color:white;
-  background: rgba(4,44,76, 1);
- }
-
-.scroll-to-top {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  display: none;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  color: white;
-  background: rgba(4,44,76, 0.5);
-  line-height: 45px;
-  border: 1px solid rgba(255, 255, 255,0);
-}
-
-.scroll-to-top:focus, .scroll-to-top:hover {
-  border-color:white;
-  transition: 0.3s ease;
-}
-
-.scroll-to-top:hover {
-  background: rgba(4,44,76,0.5);
-}
-
-.scroll-to-top i {
-  font-weight: 800;
-}
 
 .masthead {
-  min-height: 30rem;
   position: relative;
   display: table;
-  width: 100%;
-  height: auto;
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  width: calc(25% - 3vw);
+  height: 90%;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin-left:3vw;
+  backdrop-filter: blur(20px);
+  background-color: rgba(179, 179, 179, 0.1);
+  border: 1px solid rgba(179, 179, 179, 0.3);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.masthead .container{
+  margin:10%;
 }
 
 .masthead h1 {
@@ -119,82 +156,10 @@ a.scroll-to-top:hover {
   padding: 0;
 }
 
-@media (min-width: 992px) {
-  .masthead {
-    height: 100vh;
-  }
-  .masthead h1 {
-    font-size: 5.5rem;
-    color: white;
-  }
+.contact-info{
+  margin-top:10%;
 }
 
-/* Side Menu */
-#sidebar-wrapper {
-  position: fixed;
-  z-index: 2;
-  right: 0;
-  width: 250px;
-  height: 100%;
-  transition: all 0.4s ease 0s;
-  transform: translateX(250px);
-  background: #ffffff;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.sidebar-nav {
-  position: absolute;
-  top: 0;
-  width: 250px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  color: rgb(4,44,76);
-}
-
-.sidebar-nav li.sidebar-nav-item a {
-  display: block;
-  text-decoration: none;
-  color: rgb(4,44,76);
-  padding: 15px;
-}
-
-.sidebar-nav li a:hover {
-  text-decoration: none;
-  color: #747474;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.sidebar-nav li a:active,
-.sidebar-nav li a:focus {
-  text-decoration: none;
-}
-
-.sidebar-nav > .sidebar-brand {
-  font-size: 1.2rem;
-  background: rgba(52, 58, 64, 0.1);
-  height: 80px;
-  line-height: 50px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 15px;
-  color: rgb(4,44,76);
-}
-
-.sidebar-nav > .sidebar-brand a {
-  color: rgb(4,44,76);
-}
-
-.sidebar-nav > .sidebar-brand a:hover {
-  color: rgba(4,44,76,0.5);
-  background: none;
-}
-
-#sidebar-wrapper.active {
-  right: 250px;
-  width: 250px;
-  transition: all 0.4s ease 0s;
-}
 
 .menu-toggle {
   position: fixed;
@@ -245,6 +210,17 @@ a.scroll-to-top:hover {
   max-width: 30rem;
 }
 
+.skill-list{
+  column-count:2;
+  list-style-type: none;
+  list-style-position: inside;
+  text-align: left;
+}
+
+.inner-list{
+  text-align: left;
+}
+
 .portfolio-item {
   display: block;
   position: relative;
@@ -281,6 +257,7 @@ a.scroll-to-top:hover {
   font-size: 1.2rem;
 }
 
+
 @media (min-width: 992px) {
   .portfolio-item {
     max-width: none;
@@ -313,12 +290,10 @@ a.scroll-to-top:hover {
   filter:blur(3px);
 }
 
-.hover-wrapper:hover .hover-overlay {
-  opacity: 1;
-  background-color: rgba(4, 44, 76, 0.9);
-  border-color:rgb(255, 255, 255);
-  color: white;
-  visibility: visible;
+.hover-wrapper:hover img{
+  transition: 0.3s ease-in-out;
+  opacity: 0.2;
+  color: rgba(30, 44, 70, 0.84) !important;
 }
 
 .hover-overlay {
@@ -351,7 +326,7 @@ a.scroll-to-top:hover {
 }
 
 .hover-content h3{
-  font-size: 3vmin;
+  font-size: 2.5vmin;
 }
 
 .hover-content p{
@@ -362,11 +337,11 @@ a.scroll-to-top:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 2vmin;
+  font-size: 1.5vmin;
 }
 
 .hover-wrapper:hover .hover-content p{
-  height:13vmin;
+  height:9vmin;
   transition: 0.3s ease;
 }
 
@@ -414,20 +389,38 @@ a:hover, a:focus, a:active {
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background-color: rgb(10, 66, 112) !important;
+  background-color: var(--bgColor) !important;
 }
 
-.btn-secondary { 
-  background-color: white !important;
-  border-color: black !important;
-  color: rgb(4,44,76) !important;
+.btn-secondary {
+  transition: 0.3s ease-in-out;
+  background-image: url("bground3.jpg");
+  background-color: var(--bgColor) !important;
+  background-blend-mode:darken;
+  background-size:cover; 
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: rgb(255, 255, 255) !important;
+  border: 0;
+  width:100%; margin-top:25px;
+
 }
 
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
-  transition: background-color 0.3s;
-  background-color: rgb(4,44,76) !important;
-  border-color: white !important;
-  color: white !important;
+  transition: 0.3s ease-in-out;
+  background-blend-mode:none;
+  background-color: rgb(255, 240, 240) !important;
+  color: rgba(30, 44, 70, 0.84) !important;
+}
+
+.contact-icon{
+  transition: 0.3s ease-in-out;
+  width:16px;
+}
+
+.contact-icon:hover, .contact-icon:focus, .contact-icon:active{
+  transition: 0.3s ease-in-out;
+  width:20px;
 }
 
 .btn-dark {
@@ -435,7 +428,7 @@ a:hover, a:focus, a:active {
 }
 
 .btn {
-  box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.05);
   font-weight: 700;
 }
 
@@ -446,9 +439,97 @@ a:hover, a:focus, a:active {
 }
 
 .text-primary {
-  color: #98c8d6 !important;
+  color: #ffffff !important;
 }
 
 .text-secondary {
-  color: #ecb807 !important;
+  color: #ee9a81 !important;
+}
+
+@media screen and (max-width: 1650px) {
+  .wrapper{
+    overflow: auto;
+  }
+
+  .hover-content h3{
+    font-size: 1rem;
+  }
+
+  .hover-content p{
+    font-size: 0.7rem;
+  }
+
+  .subtitle{
+    display:none;
+  }
+
+  
+}
+
+@media screen and (max-width: 1430px) {
+
+  .rightwrapper{
+    height:100%;
+    width:100%;
+    margin-right:0px;
+    overflow:visible;
+  }
+
+  .wrapper{
+    height:100%;
+    overflow: auto;
+  }
+
+  .masthead{
+    width:100%;
+    margin-right:3vw;
+    height: fit-content;
+    position:relative;
+  }
+
+  .masthead .container{
+    margin:5%;
+  }
+
+  .masthead .btn-secondary{
+    width:24.5%;
+    margin-top:10px;
+  }
+
+.contact-info{
+  margin-top:15px;
+
+}
+
+.content-section {
+  margin-bottom: 5rem;
+}
+
+.content-section-about{
+  padding-top:5rem;
+  margin-bottom: 5rem;
+}
+
+.content-section-skills{
+  padding-top:5rem;
+  margin-bottom: 5rem;
+}
+
+
+}
+
+@media screen and (max-width: 830px) {
+
+  .hover-wrapper:hover .hover-content p{
+    height:0;
+  }
+
+  .masthead .btn-secondary{
+    width:45%;
+
+  }
+
+  .hover-content h3{
+    font-size:12px;
+  }
 }
